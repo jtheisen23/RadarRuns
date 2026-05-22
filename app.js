@@ -9,28 +9,15 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-/* ===========================================================
-   FIREBASE CONFIG
-   Paste your Firebase web app config below. Find it in the
-   Firebase console: Project settings → General → Your apps.
-   =========================================================== */
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
-};
-
-/* ----- Settings ----- */
-const VENMO_HANDLE = "jason-rader-14";
-const PRICE = 5;
-const RUN_TIME = "5:40 AM";
-const RUN_WEEKDAYS = [3, 5]; // 0=Sun … 3=Wed, 5=Fri
-const RUNS_TO_SHOW = 4;
-
-const isConfigured = !firebaseConfig.apiKey.startsWith("YOUR_");
+import {
+  firebaseConfig,
+  isConfigured,
+  VENMO_HANDLE,
+  PRICE,
+  RUN_TIME,
+  RUN_WEEKDAYS,
+  RUNS_TO_SHOW,
+} from "./config.js";
 
 let db = null;
 if (isConfigured) {

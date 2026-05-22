@@ -286,7 +286,91 @@ input:focus {
   padding: 8px 20px 36px;
 }
 
+/* ----- Admin page ----- */
+.hero-compact { padding: 28px 20px 40px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+.stat {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 12px 6px;
+}
+.stat-num {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--orange-dark);
+}
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.run-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.run-pill {
+  background: #fff7f3;
+  border: 1px solid var(--orange);
+  color: var(--orange-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.player-list { list-style: none; }
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+.player:last-child { border-bottom: none; }
+.player-info { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.player-name { font-weight: 600; }
+.player.is-paid .player-name { color: var(--muted); }
+.player-phone { font-size: 0.82rem; color: var(--venmo); text-decoration: none; }
+.player-phone.muted { color: var(--muted); }
+
+.paid-btn {
+  flex-shrink: 0;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1.5px solid var(--orange);
+  background: #fff;
+  color: var(--orange-dark);
+  transition: opacity 0.15s;
+}
+.paid-btn:hover:not(:disabled) { background: #fff7f3; }
+.paid-btn:disabled { opacity: 0.55; cursor: default; }
+.player.is-paid .paid-btn {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.footer a { color: var(--orange-dark); }
+
 @media (max-width: 380px) {
   .runs-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.6rem; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
 }

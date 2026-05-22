@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Basketball Runs — Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://www.gstatic.com" />
+</head>
+<body>
+  <!-- Password gate -->
+  <div id="lock" class="overlay">
+    <div class="modal">
+      <div class="ball" aria-hidden="true">🏀</div>
+      <h2>Admin access</h2>
+      <p class="pay-summary">Enter the admin password to manage signups.</p>
+      <form id="lock-form">
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
+        <button type="submit" class="btn-primary">Unlock</button>
+        <p id="lock-error" class="form-error" role="alert" hidden>Incorrect password.</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="admin" hidden>
+    <div id="config-banner" class="config-banner" hidden>
+      ⚠️ Firebase isn't configured yet. Paste your config into <code>config.js</code>.
+    </div>
+
+    <header class="hero hero-compact">
+      <div class="hero-inner">
+        <h1>Signup Admin</h1>
+        <p class="tagline">Track who's coming and who's paid.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div id="stats" class="stats">
+          <div class="stat"><span class="stat-num" id="stat-players">0</span><span class="stat-label">Signups</span></div>
+          <div class="stat"><span class="stat-num" id="stat-paid">0</span><span class="stat-label">Paid</span></div>
+          <div class="stat"><span class="stat-num" id="stat-collected">$0</span><span class="stat-label">Collected</span></div>
+          <div class="stat"><span class="stat-num" id="stat-due">$0</span><span class="stat-label">Outstanding</span></div>
+        </div>
+      </section>
+
+      <div id="runs-admin">
+        <p class="loading">Loading signups…</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p><a href="index.html">← Back to signup page</a></p>
+    </footer>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

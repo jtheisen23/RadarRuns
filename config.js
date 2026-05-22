@@ -6,12 +6,13 @@
 /* Firebase web app config.
    Firebase console → Project settings → General → Your apps. */
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyDBGTHf5CAPZ0H-0DrVRmJSwqsS22UQPr4",
+  authDomain: "radar-runs.firebaseapp.com",
+  projectId: "radar-runs",
+  storageBucket: "radar-runs.firebasestorage.app",
+  messagingSenderId: "187607289769",
+  appId: "1:187607289769:web:e1eac2bdeb19838ec43eb8",
+  measurementId: "G-0KCW1EYW44",
 };
 
 /* Run + payment settings. */

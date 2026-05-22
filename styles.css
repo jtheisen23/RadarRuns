@@ -195,6 +195,7 @@ input:focus {
   padding: 20px;
   z-index: 50;
 }
+.overlay[hidden] { display: none; }
 .modal {
   background: #fff;
   border-radius: 18px;
@@ -249,6 +250,13 @@ input:focus {
   font-weight: 700;
 }
 .btn-venmo:hover { filter: brightness(0.93); }
+
+.pay-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 10px;
+  line-height: 1.4;
+}
 
 .qr-wrap { margin-top: 20px; }
 .qr-label {

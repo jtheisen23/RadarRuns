@@ -7,7 +7,6 @@
   <meta name="description" content="Sign up for our weekly open basketball runs — Wednesday & Friday mornings." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://www.gstatic.com" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <div id="config-banner" class="config-banner" hidden>
@@ -65,13 +64,16 @@
       <a id="venmo-btn" class="btn-venmo" href="#" target="_blank" rel="noopener">
         Pay $5 with Venmo
       </a>
+      <p class="pay-note">
+        Opens Venmo on your phone. If it doesn't prefill, send
+        <strong>$5</strong> to <strong>@jason-rader-14</strong>.
+      </p>
 
       <div class="qr-wrap">
-        <p class="qr-label">or scan to pay</p>
-        <div id="qr"></div>
+        <p class="qr-label">On a computer? Scan with your phone</p>
+        <img id="qr" alt="Venmo payment QR code" width="200" height="200" />
       </div>
 
-      <p class="handle">Venmo: <strong>@jason-rader-14</strong></p>
       <button type="button" class="btn-text" id="pay-done">Done</button>
     </div>
   </div>

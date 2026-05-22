@@ -177,10 +177,11 @@ function showPayment(name, runLabel) {
   const link = venmoLink(note);
   venmoBtn.href = link;
 
-  qrEl.innerHTML = "";
-  if (window.QRCode) {
-    new QRCode(qrEl, { text: link, width: 190, height: 190, correctLevel: QRCode.CorrectLevel.M });
-  }
+  // QR rendered by an image service so it works without a JS library.
+  qrEl.src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=" +
+    encodeURIComponent(link);
+
   overlay.hidden = false;
 }
 
@@ -191,6 +192,9 @@ document.getElementById("pay-close").addEventListener("click", closeModal);
 document.getElementById("pay-done").addEventListener("click", closeModal);
 overlay.addEventListener("click", (e) => {
   if (e.target === overlay) closeModal();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !overlay.hidden) closeModal();
 });
 
 /* ----- Init ----- */

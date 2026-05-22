@@ -1,0 +1,23 @@
+rules_version = '2';
+
+// Security rules for the Basketball Runs signup page.
+// Paste these into the Firebase console: Firestore Database → Rules.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /signups/{signup} {
+      // Anyone can see the roster.
+      allow read: if true;
+
+      // Anyone can sign up, but the document must be well-formed.
+      allow create: if request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 80
+                    && request.resource.data.runDate is string
+                    && request.resource.data.runDate.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+                    && request.resource.data.paid == false;
+
+      // Signups can't be edited or deleted from the public page.
+      allow update, delete: if false;
+    }
+  }
+}

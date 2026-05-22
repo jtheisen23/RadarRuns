@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Runs — Sign Up</title>
+  <meta name="description" content="Sign up for our weekly open basketball runs — Wednesday & Friday mornings." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://www.gstatic.com" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="config-banner" class="config-banner" hidden>
+    ⚠️ Firebase isn't configured yet. Open <code>app.js</code> and paste your Firebase web config so signups can be saved.
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="ball" aria-hidden="true">🏀</div>
+      <h1>Open Basketball Runs</h1>
+      <p class="tagline">Run it back every week — all skill levels welcome.</p>
+      <ul class="facts">
+        <li><span class="fact-label">When</span> Wednesdays &amp; Fridays</li>
+        <li><span class="fact-label">Tip-off</span> 5:40 AM</li>
+        <li><span class="fact-label">Cost</span> $5 per run</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1. Pick a run</h2>
+      <p class="hint">Tap the morning you want to play.</p>
+      <div id="runs" class="runs-grid">
+        <p class="loading">Loading upcoming runs…</p>
+      </div>
+    </section>
+
+    <section class="card" id="signup-card">
+      <h2>2. Your info</h2>
+      <form id="signup-form" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" placeholder="First &amp; last name" required maxlength="80" />
+
+        <label for="phone">Phone <span class="optional">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="So we can text you if plans change" maxlength="20" />
+
+        <button type="submit" id="submit-btn" class="btn-primary" disabled>
+          Sign up
+        </button>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Payment confirmation modal -->
+  <div id="pay-overlay" class="overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pay-title">
+      <button type="button" class="modal-close" id="pay-close" aria-label="Close">&times;</button>
+      <div class="check" aria-hidden="true">✓</div>
+      <h2 id="pay-title">You're on the list!</h2>
+      <p id="pay-summary" class="pay-summary"></p>
+      <p class="pay-instructions">Lock in your spot — send <strong>$5</strong> on Venmo.</p>
+
+      <a id="venmo-btn" class="btn-venmo" href="#" target="_blank" rel="noopener">
+        Pay $5 with Venmo
+      </a>
+
+      <div class="qr-wrap">
+        <p class="qr-label">or scan to pay</p>
+        <div id="qr"></div>
+      </div>
+
+      <p class="handle">Venmo: <strong>@jason-rader-14</strong></p>
+      <button type="button" class="btn-text" id="pay-done">Done</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>See you on the court. 🏀</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

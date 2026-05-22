@@ -25,7 +25,7 @@ export const RUNS_TO_SHOW = 4;
 /* Password for the admin page (admin.html).
    CHANGE THIS before sharing the page. It's checked in the browser,
    so it only gates the UI — keep it to something low-stakes. */
-export const ADMIN_PASSWORD = "changeme";
+export const ADMIN_PASSWORD = "PayJason20$";
 
 /* True once real Firebase values have been pasted in above. */
 export const isConfigured = !firebaseConfig.apiKey.startsWith("YOUR_");
